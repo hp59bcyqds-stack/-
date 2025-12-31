@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>松本雄介 | 公式サイト</title>
+  <meta name="description" content="松本雄介の公式サイト。文章／記録／制作。作品と最新ログ、連絡先。" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0b0d10" />
+
+  <meta property="og:title" content="松本雄介 | 公式サイト" />
+  <meta property="og:description" content="文章／記録／制作。作品と最新ログ、連絡先。" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg:#0b0d10;
+      --card:#11151b;
+      --line:rgba(255,255,255,.09);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.66);
+      --soft:rgba(255,255,255,.10);
+      --accent:#7ee787;
+      --accent2:#7aa2ff;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --r:20px;
+      --max: 980px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", "Segoe UI", Roboto, Arial, sans-serif;
+      background: radial-gradient(900px 600px at 20% 0%, rgba(122,162,255,.14), transparent 60%),
+                  radial-gradient(900px 600px at 85% 10%, rgba(126,231,135,.12), transparent 55%),
+                  linear-gradient(180deg, #07090c 0%, #0b0d10 45%, #07090c 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{
+      width:min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 64px;
+    }
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding: 10px 0 18px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(126,231,135,.08);
+    }
+    .brand b{letter-spacing:.02em}
+    nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .pill:hover{border-color: rgba(255,255,255,.18); color: var(--text)}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 16px;
+      align-items:stretch;
+      margin-top: 10px;
+    }
+    @media (max-width: 860px){
+      .hero{grid-template-columns:1fr}
+    }
+    .card{
+      background: rgba(17,21,27,.72);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .heroMain{
+      padding: 26px 24px 22px;
+      position:relative;
+      min-height: 240px;
+    }
+    .heroMain:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: linear-gradient(135deg, rgba(126,231,135,.22), rgba(122,162,255,.18), transparent 70%);
+      filter: blur(26px);
+      opacity: .55;
+      pointer-events:none;
+    }
+    .heroMain > *{position:relative}
+    h1{
+      margin: 0 0 8px;
+      font-size: 34px;
+      letter-spacing:.02em;
+    }
+    .sub{
+      margin: 0 0 14px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 15px;
+      max-width: 60ch;
+    }
+    .ctaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 14px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      font-size: 14px;
+      color: var(--text);
+    }
+    .btn:hover{
+      border-color: rgba(255,255,255,.18);
+      transform: translateY(-1px);
+      transition: .18s ease;
+    }
+    .btn.primary{
+      border-color: rgba(126,231,135,.35);
+      background: linear-gradient(135deg, rgba(126,231,135,.15), rgba(122,162,255,.10));
+    }
+    .side{
+      padding: 18px 18px 16px;
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      min-height: 240px;
+    }
+    .kpi{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .mini{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: 14px;
+      padding: 12px;
+    }
+    .mini .t{font-size:12px;color:var(--muted);margin:0 0 6px}
+    .mini .v{font-size:16px;margin:0}
+    .note{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+    }
+    main{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 860px){
+      main{grid-template-columns:1fr}
+    }
+    .section{
+      padding: 18px 18px 16px;
+    }
+    h2{
+      font-size: 15px;
+      margin: 0 0 12px;
+      letter-spacing:.02em;
+      color: rgba(255,255,255,.88);
+    }
+    .list{
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    .item{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: 14px;
+      padding: 12px 12px;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap: 10px;
+    }
+    .item:hover{border-color: rgba(255,255,255,.18)}
+    .item b{display:block;font-size:14px;margin:0 0 4px}
+    .item small{color:var(--muted);line-height:1.6}
+    .tag{
+      font-size: 12px;
+      color: rgba(255,255,255,.70);
+      border: 1px solid var(--soft);
+      background: rgba(255,255,255,.02);
+      padding: 5px 9px;
+      border-radius: 999px;
+      white-space:nowrap;
+      margin-top: 2px;
+    }
+    footer{
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+      display:flex;
+      justify-content:space-between;
+      gap: 14px;
+      flex-wrap:wrap;
+      padding-top: 10px;
+    }
+    .mutedLink{color: rgba(255,255,255,.70); text-decoration:underline; text-underline-offset:3px}
+    .mutedLink:hover{color: rgba(255,255,255,.92)}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <b>松本雄介</b>
+      </div>
+      <nav aria-label="メニュー">
+        <a class="pill" href="#works">作品</a>
+        <a class="pill" href="#latest">最新ログ</a>
+        <a class="pill" href="#contact">連絡</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card heroMain">
+        <h1>松本雄介</h1>
+        <p class="sub">
+          文章／記録／制作。<br>
+          整える前のログも置く。必要なら後で整える。
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="#works">作品を見る</a>
+          <a class="btn" href="#contact">相談・依頼</a>
+          <a class="btn" href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+
+      <aside class="card side" aria-label="概要">
+        <div class="kpi">
+          <div class="mini">
+            <p class="t">拠点</p>
+            <p class="v">日本</p>
+          </div>
+          <div class="mini">
+            <p class="t">更新</p>
+            <p class="v">随時</p>
+          </div>
+          <div class="mini">
+            <p class="t">テーマ</p>
+            <p class="v">記録</p>
+          </div>
+          <div class="mini">
+            <p class="t">形式</p>
+            <p class="v">短文</p>
+          </div>
+        </div>
+        <p class="note">
+          このページは「公開してから育てる」前提。<br>
+          必要な情報だけ増やしていく。
+        </p>
+      </aside>
+    </section>
+
+    <main>
+      <section id="works" class="card section">
+        <h2>作品／発信</h2>
+        <ul class="list">
+          <li>
+            <a class="item" href="https://instagram.com/" target="_blank" rel="noopener">
+              <div>
+                <b>Instagram</b>
+                <small>投稿／連載／ログの置き場</small>
+              </div>
+              <span class="tag">SNS</span>
+            </a>
+          </li>
+          <li>
+            <a class="item" href="#" onclick="return false;">
+              <div>
+                <b>文章（準備中）</b>
+                <small>まとまったテキストのアーカイブ</small>
+              </div>
+              <span class="tag">Archive</span>
+            </a>
+          </li>
+          <li>
+            <a class="item" href="#" onclick="return false;">
+              <div>
+                <b>画像（準備中）</b>
+                <small>インスタ用素材／制作物</small>
+              </div>
+              <span class="tag">Visual</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="latest" class="card section">
+        <h2>最新ログ</h2>
+        <ul class="list">
+          <li class="item">
+            <div>
+              <b>2025-12-31</b>
+              <small>ホームページを作る。まず公開。</small>
+            </div>
+            <span class="tag">Log</span>
+          </li>
+          <li class="item">
+            <div>
+              <b>2025-12-30</b>
+              <small>余計なことは後回し。必要な導線だけ。</small>
+            </div>
+            <span class="tag">Note</span>
+          </li>
+          <li class="item">
+            <div>
+              <b>2025-12-29</b>
+              <small>積む。残す。薄く続ける。</small>
+            </div>
+            <span class="tag">Draft</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="contact" class="card section">
+        <h2>相談・依頼</h2>
+        <ul class="list">
+          <li class="item">
+            <div>
+              <b>できること</b>
+              <small>文章制作／構成整理／インスタ用の制作支援</small>
+            </div>
+            <span class="tag">OK</span>
+          </li>
+          <li class="item">
+            <div>
+              <b>できないこと</b>
+              <small>違法・グレーな依頼／他者の権利を侵害する制作</small>
+            </div>
+            <span class="tag">NG</span>
+          </li>
+          <li class="item">
+            <div>
+              <b>連絡</b>
+              <small>
+                Instagram DM：<a class="mutedLink" href="https://instagram.com/" target="_blank" rel="noopener">こちら</a><br>
+                Email：<span style="opacity:.9">yourname@example.com</span>
+              </small>
+            </div>
+            <span class="tag">Contact</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card section" aria-label="免責">
+        <h2>免責</h2>
+        <p style="margin:0;color:var(--muted);font-size:13px;line-height:1.9">
+          掲載内容は予告なく更新・変更します。外部リンク先の内容について当サイトは責任を負いません。
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="y"></span> 松本雄介</div>
+      <div>
+        <a class="mutedLink" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">上へ戻る</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
